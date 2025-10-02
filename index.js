@@ -32,6 +32,7 @@ ${htmlFromQuill}
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setContent(fullHtml, { waitUntil: "networkidle0" });
+    await page.screenshot({ path: "debug.png", fullPage: true });
 
     await page.pdf({
         path: "output.pdf",
